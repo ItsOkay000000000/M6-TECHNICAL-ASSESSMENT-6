@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" type="text/css" href="loginstyle.css">
+</head>
+<script>
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Login successful!");
+    window.location.href = "index.html"; // Redirect to home
+});
+</script>
+
+<body>
+<form action="https://formsubmit.co/naorbe.narmandy03@gmail.com" method="POST">
+    <h2>Login</h2>
+    
+    <div class="inputBox"> 
+        <input type="text" name="Username" required>
+        <label>Username</label>
+    </div>
+    
+    <div class="inputBox">
+        <input type="password" name="password" required>
+        <label>Password</label>
+    </div>
+    
+    <div class="inputBox">
+        <input type="submit" value="Login">
+    </div>
+    
+    <p>Don't have an account?
+        <a href="registration.html">Register</a>
+    </p>
+</form>
+
+<script>
+let label = document.querySelectorAll('label')
+.forEach(label => {
+    label.innerHTML = label.innerText.split('').map(
+        (letters, i) => `<span style="transition-delay: ${i * 50}ms">${letters}</span>`
+    ).join('');
+});
+</script>
+</body>
+</html>
